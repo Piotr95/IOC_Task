@@ -11,7 +11,11 @@ import javax.annotation.PostConstruct;
 public class UserControler {
     @Autowired
     private UserService userService;
-    
+    @PostConstruct
+    public void post() {
+        System.out.println("JSR 250");
+    }
+
     public void addNewUser(User user)
     {
         userService.createUser(user);
