@@ -22,9 +22,9 @@ public class UserService {
 
     //CRUD 'R'
     public void readUser(int id) {
-        Object user = userRepository.findById((long) id);
-        User user1=(User)user;
-        System.out.println(user1);
+        Object user = userRepository.findById((long) id).get();
+
+        System.out.println(user);
     }
     //CRUD 'U'
     public void updateUser(int id,String first_name,String last_name)
