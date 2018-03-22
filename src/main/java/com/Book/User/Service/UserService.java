@@ -24,17 +24,16 @@ public class UserService {
     public void readUser(int id) {
         Object user = userRepository.findById((long) id);
         User user1=(User)user;
-        System.out.println(user1.toString());
+        System.out.println(user1);
     }
     //CRUD 'U'
     public void updateUser(int id,String first_name,String last_name)
     {
-        Object user = userRepository.findById((long) id);
-        User updateUser=(User) user;
-        updateUser.setFirstName(first_name);
-        updateUser.setLastName(last_name);
+        User user = userRepository.findById((long) id).get();
+        user.setFirstName(first_name);
+        user.setLastName(last_name);
         //works like update
-        userRepository.save(updateUser);
+        userRepository.save(user);
     }
     //CRUD 'D'
     public void deleteUser(User user)
