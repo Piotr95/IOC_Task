@@ -23,7 +23,10 @@ public class User {
                 ", lastName='" + lastName + '\'' +
                 '}';
     }
+public User()
+{
 
+}
     public User(@NotNull String firstName, @NotNull String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;

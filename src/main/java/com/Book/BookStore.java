@@ -14,11 +14,11 @@ import java.util.List;
 @SpringBootApplication
 public class BookStore  implements CommandLineRunner
 {
-//    private UserControler userControler;
-//
-//    public BookStore(UserControler userControler) {
-//        this.userControler = userControler;
-//    }
+    private UserControler userControler;
+
+    public BookStore(UserControler userControler) {
+        this.userControler = userControler;
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(BookStore.class, args);
@@ -30,12 +30,13 @@ public class BookStore  implements CommandLineRunner
          logger.error("ale ze mnie Dupa");
 
 
-//        User user= new User("Jan","Kowalski");
-//        User user1= new User("Anna","Nowak");
-//        User user2= new User("Mamed","Hlidow");
-//        userControler.addNewUser(user);
-//        userControler.addNewUser(user1);
-//        userControler.addNewUser(user2);
+        User user= new User("Jan","Kowalski");
+        User user1= new User("Anna","Nowak");
+        User user2= new User("Mamed","Hlidow");
+        userControler.addNewUser(user);
+        userControler.addNewUser(user1);
+        userControler.addNewUser(user2);
+        userControler.readUser(1);
 
     }
 }

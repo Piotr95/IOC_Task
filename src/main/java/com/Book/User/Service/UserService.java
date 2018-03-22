@@ -22,14 +22,14 @@ public class UserService {
 
     //CRUD 'R'
     public void readUser(int id) {
-        Object user = userRepository.findById(id);
+        Object user = userRepository.findById((long) id);
         User user1=(User)user;
-        user1.toString();
+        System.out.println(user1.toString());
     }
     //CRUD 'U'
     public void updateUser(int id,String first_name,String last_name)
     {
-        Object user = userRepository.findById(id);
+        Object user = userRepository.findById((long) id);
         User updateUser=(User) user;
         updateUser.setFirstName(first_name);
         updateUser.setLastName(last_name);
